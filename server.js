@@ -13,12 +13,14 @@ app.use(express.json())
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/index.html'))
-    rollbar.error("html file served successfully")
+    rollbar.info("html file served successfully")
 })
 
 app.get('/style', (req, res) => {
     res.sendFile(path.join(__dirname, "/public/styles.css"))
 })
+
+let students = []
 
 app.post('/api/student', (req, res)=>{
     let {name} = req.body
