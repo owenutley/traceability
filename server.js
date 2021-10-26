@@ -10,6 +10,9 @@ app.get('/', (req, res) => {
     // rollbar.info("html file served successfully")
 })
 
+app.get('/style', (req, res) => {
+    res.sendFilepath.join(__dirname, "/public/styles.css")
+})
 
 // app.use(rollbar.errorHandler())
 
